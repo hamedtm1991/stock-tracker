@@ -19,29 +19,6 @@ class StockController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function upload(Request $request): JsonResponse
-    {
-        $request->validate([
-            'file' => 'required|file|mimes:xlsx,csv',
-        ]);
-
-        $file = $request->file('file');
-
-        $path = $file->store('stocks', 'private');
-
-        ImportEquityExcelJob::dispatch($path);
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'File uploaded and import started',
-            'path' => $path,
-        ]);
-    }
-
-    /**
      * @param string $period
      * @return JsonResponse
      */
