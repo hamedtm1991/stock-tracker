@@ -1,0 +1,54 @@
+{
+    "info": {
+        "name": "Stock Tracker API",
+        "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+        "description": "Postman collection for Stock Tracker API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get Performance by Period",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/api/stocks/period/1D",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8000",
+                    "path": ["api","stocks","period","1D"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Performance by Custom Dates",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8000/api/stocks/custom?start=2026-01-01&end=2026-01-05",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8000",
+                    "path": ["api","stocks","custom"],
+                    "query": [
+                        {"key": "start", "value": "2026-01-01"},
+                        {"key": "end", "value": "2026-01-05"}
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
